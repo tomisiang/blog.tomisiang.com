@@ -7,6 +7,7 @@ import type { Metadata } from 'next'
 const openSans = Open_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://blog.tomisiang.com'),
   title: 'Tom Isiang | Blog',
   description: 'Page where Tom shares his thoughts on some stuffs',
   openGraph: {
