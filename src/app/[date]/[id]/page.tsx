@@ -63,7 +63,13 @@ export async function generateMetadata({ params }: PostParams) {
     title: (post?.title ?? '') + ' — Tom Isiang | Blog',
     description: post?.spoiler ?? '',
     openGraph: {
-      images: [`http://${post?.image.fields.file.url}`],
+      images: [
+        {
+          url: `http://${post?.image.fields.file.url}`,
+          height: 600,
+          width: 600,
+        },
+      ],
     },
   }
 }

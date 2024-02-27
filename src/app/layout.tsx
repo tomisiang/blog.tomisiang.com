@@ -11,7 +11,13 @@ export const metadata: Metadata = {
   title: 'Tom Isiang | Blog',
   description: 'Page where Tom shares his thoughts on some stuffs',
   openGraph: {
-    images: ['/assets/me.jpg'],
+    images: [
+      {
+        url: '/assets/me.jpg',
+        height: 600,
+        width: 600,
+      },
+    ],
   },
 }
 
