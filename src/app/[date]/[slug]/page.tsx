@@ -7,16 +7,16 @@ import './markdown.css'
 
 interface PostParams {
   params: {
-    id: string
+    slug: string
     date: string
   }
 }
 
 export default async function Post({ params }: PostParams) {
-  const { id } = params
+  const { slug } = params
 
   const res = await getPosts()
-  const post = res.data?.items.find(item => item.fields.id === id)?.fields
+  const post = res.data?.items.find(item => item.fields.slug === slug)?.fields
 
   if (!post) return null
 
@@ -42,22 +42,22 @@ export default async function Post({ params }: PostParams) {
 
 export const dynamicParams = false
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<PostParams['params'][]> {
   const res = await getPosts()
 
   if (res.error || !res.data) return []
 
   return res.data.items.map(post => ({
+    slug: post.fields.slug,
     date: dateId(post.fields.date),
-    id: post.fields.id,
   }))
 }
 
 export async function generateMetadata({ params }: PostParams) {
-  const { id } = params
+  const { slug } = params
 
   const res = await getPosts()
-  const post = res.data?.items.find(item => item.fields.id === id)?.fields
+  const post = res.data?.items.find(item => item.fields.slug === slug)?.fields
 
   return {
     title: (post?.title ?? '') + ' — Tom Isiang | Blog',

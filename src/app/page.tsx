@@ -21,7 +21,7 @@ export default async function Home() {
 
 function PostItem(post: Post) {
   return (
-    <Link href={`/${dateId(post.date)}/${[post.id]}`}>
+    <Link href={`/${dateId(post.date)}/${[post.slug]}`}>
       <div className='flex justify-between items-end py-4 border-b-2 border-gray-300 border-dashed'>
         <div className='flex-1 truncate flex flex-col [&>*]:truncate'>
           <span className='text-3xl font-bold truncate text-appBlue '>
