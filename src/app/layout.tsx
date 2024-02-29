@@ -31,7 +31,7 @@ export default function RootLayout({
       <body className={cn(openSans.className, 'bg-appWhite')}>
         <div className='flex flex-col'>
           <Header />
-          <main className='pt-4'>{children}</main>
+          <main className='pt-6'>{children}</main>
         </div>
       </body>
     </html>

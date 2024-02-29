@@ -12,7 +12,7 @@ export default function Header() {
             width={45}
             height={45}
           />
-          <span className='text-xl font-semibold appBlue'>Tom Isiang</span>
+          <span className='text-xl font-bold text-appBlue'>blog</span>
         </div>
       </Link>
     </header>
