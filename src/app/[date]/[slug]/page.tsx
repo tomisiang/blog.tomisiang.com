@@ -22,7 +22,7 @@ export default async function Post({ params }: PostParams) {
 
   return (
     <article className='app-container flex flex-col gap-4'>
-      <div className='flex items-end gap-3 border-b-2 py-4 border-gray-300 border-dashed'>
+      <div className='flex items-end gap-3 border-b-2 pb-4 border-gray-300 border-dashed'>
         <BlogImage src={`https:${post.image.fields.file.url}`} />
         <div className='flex-1 truncate flex flex-col [&>*]:truncate'>
           <span className='text-3xl font-bold truncate text-appBlue '>
