@@ -10,6 +10,6 @@
 
 @layer components {
   .app-container {
-    @apply container mx-auto px-5 sm:px-0;
+    @apply container mx-auto px-4 sm:px-0;
   }
 }

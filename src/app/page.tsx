@@ -22,9 +22,11 @@ export default async function Home() {
 function PostItem(post: Post) {
   return (
     <Link href={`/${dateId(post.date)}/${[post.slug]}`} className='group'>
-      <div className="flex justify-between items-end pl-4 pb-4 border-b-2 border-gray-300 border-dashed relative before:content-[''] before:absolute before:w-[8px] before:top-0 before:bottom-0 before:left-0 before:bg-gray-400 before:hover:bg-appBlue">
-        <div className='flex-1 flex flex-col  truncate [&>*]:truncate'>
-          <span className='text-3xl font-bold text-appBlue '>{post.title}</span>
+      <div className="flex justify-between items-end pl-4 pb-4 border-b-2 border-gray-300 border-dashed relative before:content-[''] before:absolute before:w-[6px] before:sm:w-[8px] before:top-0 before:bottom-0 before:left-0 before:bg-gray-400 before:hover:bg-appBlue">
+        <div className='flex-1 flex flex-col sm:truncate sm:[&>*]:truncate'>
+          <span className='text-2xl sm:text-3xl font-bold text-appBlue'>
+            {post.title}
+          </span>
           <span className='text-red-700 text-xs'>
             {formattedDate(post.date)}
           </span>
@@ -32,7 +34,7 @@ function PostItem(post: Post) {
         </div>
         <BlogImage
           src={`https:${post.image.fields.file.url}`}
-          className='group-hover:opacity-100'
+          className='group-hover:opacity-100 hidden sm:block'
           defaultTransparent
         />
       </div>
