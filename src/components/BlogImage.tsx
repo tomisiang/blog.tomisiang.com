@@ -14,7 +14,7 @@ export default function BlogImage(props: BlogImageProps) {
     <div
       style={{ backgroundImage: `url(${src})` }}
       className={cn(
-        'bg-cover bg-center w-[130px] h-[80px] rounded',
+        'bg-cover bg-center w-[130px] h-[80px] rounded shrink-0',
         { 'opacity-25': defaultTransparent },
         className
       )}
